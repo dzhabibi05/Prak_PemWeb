@@ -1,3 +1,4 @@
 <?php 
-echo "Hello, World!";
+session_start();
+echo "Welcome to the homepage!";
 ?>
