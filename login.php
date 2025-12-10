@@ -10,6 +10,17 @@
   <main class="container">
     <h2>Login</h2>
 
+    <?php if (isset($_GET['error'])): ?>
+      <div style="color: red; margin-bottom: 15px; text-align: center; font-weight: bold;">
+        <?php 
+          if ($_GET['error'] == 'empty') {
+            echo "⚠ Harap isi username dan password!";
+          } elseif ($_GET['error'] == 'invalid') {
+            echo "❌ Username atau password salah!";
+          }
+        ?>
+      </div>
+    <?php endif; ?>
     <form class="form" action="php/login_process.php" method="POST">
       <label>
         Username

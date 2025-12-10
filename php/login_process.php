@@ -4,15 +4,18 @@ session_start();
 require_once "db.php";
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: ../login.html");
+    // Redirect ke login.php (bukan html lagi)
+    header("Location: ../login.php");
     exit;
 }
 
 $username = trim($_POST['username'] ?? '');
 $password = $_POST['password'] ?? '';
 
+// Cek jika kosong
 if ($username === '' || $password === '') {
-    echo "<script>alert('Isi username dan password terlebih dulu'); window.location='../login.html';</script>";
+    // Kirim error 'empty' kembali ke halaman login
+    header("Location: ../login.php?error=empty");
     exit;
 }
 
@@ -25,15 +28,18 @@ $user = mysqli_fetch_assoc($result);
 mysqli_stmt_close($stmt);
 
 if ($user && password_verify($password, $user['password'])) {
-    // login sukses
+    // Login sukses
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
-    // regenerate id for security
+    
     session_regenerate_id(true);
-    header("Location: ../game.php");
+    
+    // Redirect ke Home, bukan langsung ke Game
+    header("Location: ../home.php");
     exit;
 } else {
-    echo "<script>alert('Username atau password salah'); window.location='../login.html';</script>";
+    // Kirim error 'invalid' (salah password/user)
+    header("Location: ../login.php?error=invalid");
     exit;
 }
 ?>

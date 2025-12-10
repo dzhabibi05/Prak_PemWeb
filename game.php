@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Roblox Obby 2D</title>
+  <title>Play - Roblox Obby 2D</title>
   <style>
     body {
       margin: 0;
@@ -18,79 +18,84 @@ if (!isset($_SESSION['user_id'])) {
       text-align: center;
     }
 
-    h1 {
-      margin: 10px 0;
-    }
+    h1 { margin: 10px 0; }
 
     #hud {
       display: flex;
       justify-content: center;
       gap: 20px;
       margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
     }
 
     canvas {
       background: #dff9fb;
       border: 4px solid #222;
       border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
-    button {
-      margin-top: 10px;
-      padding: 10px 18px;
+    /* Styling tombol navigasi baru */
+    .nav-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
       border: none;
       border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-left: 5px;
+      margin-right: 5px;
+      transition: transform 0.1s;
+    }
+    
+    .btn-home { background: #e67e22; color: white; border-bottom: 4px solid #d35400; }
+    .btn-rank { background: #f1c40f; color: #333; border-bottom: 4px solid #f39c12; }
+
+    .nav-btn:active {
+      transform: translateY(2px);
+      border-bottom-width: 2px;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      width: 300px;
+      text-align: center;
+      animation: zoom 0.3s ease;
+      border: 4px solid #333;
+    }
+
+    .popup-box button {
+      margin: 8px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
       background: #3498db;
       color: white;
-      font-size: 14px;
-      cursor: pointer;
+      font-weight: bold;
     }
 
-    button:hover {
-      opacity: 0.8;
+    .popup-box button:hover { opacity: 0.8; }
+
+    @keyframes zoom {
+      from { transform: scale(0.6); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
-    .popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.popup-box {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  width: 300px;
-  text-align: center;
-  animation: zoom 0.3s ease;
-}
-
-.popup-box button {
-  margin: 8px;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background: #3498db;
-  color: white;
-}
-
-.popup-box button:hover {
-  opacity: 0.8;
-}
-
-@keyframes zoom {
-  from { transform: scale(0.6); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-
   </style>
 </head>
 <body>
@@ -104,12 +109,12 @@ if (!isset($_SESSION['user_id'])) {
 
 <canvas id="game" width="800" height="400"></canvas>
 <br>
-<button onclick="resetGame()">Restart</button>
-<h2>🏆 Top 5 Leaderboard</h2>
-<div id="leaderboard"></div>
+
+<button class="nav-btn btn-home" onclick="goHome()">🏠 Home</button>
+<button class="nav-btn btn-rank" onclick="goToLeaderboard()">🏆 Leaderboard</button>
 
 <script>
-// Variabel untuk menyimpan ID animasi agar bisa di-stop/reset dengan bersih
+// Variabel untuk menyimpan ID animasi
 let animationId = null;
 
 const canvas = document.getElementById("game");
@@ -121,15 +126,8 @@ let time = 0;
 let timerInterval;
 
 const player = {
-  x: 50,
-  y: 300,
-  w: 30,
-  h: 30,
-  vx: 0,
-  vy: 0,
-  speed: 2,
-  jump: 8,
-  onGround: false
+  x: 50, y: 300, w: 30, h: 30,
+  vx: 0, vy: 0, speed: 2, jump: 8, onGround: false
 };
 
 const levels = [
@@ -160,10 +158,7 @@ const levels = [
       { x: 200, y: 320, w: 120, h: 20 },
       { 
         x: 380, y: 280, w: 120, h: 20,
-        moving: true,
-        speed: 2,
-        minX: 300,
-        maxX: 600
+        moving: true, speed: 2, minX: 300, maxX: 600
       },
       { x: 560, y: 240, w: 120, h: 20 }
     ],
@@ -175,24 +170,15 @@ const levels = [
 let currentLevel = 0;
 
 function resetPlayer() {
-  player.x = 50;
-  player.y = 300;
-  player.vx = 0;
-  player.vy = 0;
+  player.x = 50; player.y = 300; player.vx = 0; player.vy = 0;
 }
 
 function resetGame() {
-  // 1. Matikan loop animasi yang sedang berjalan agar tidak menumpuk
-  if (animationId) {
-    cancelAnimationFrame(animationId);
-  }
-  
+  if (animationId) cancelAnimationFrame(animationId);
   currentLevel = 0;
   resetPlayer();
   time = 0;
   startTimer();
-  
-  // 2. Jalankan ulang loop game
   update();
 }
 
@@ -205,12 +191,7 @@ function startTimer() {
 }
 
 function rectCollision(a, b) {
-  return (
-    a.x < b.x + b.w &&
-    a.x + a.w > b.x &&
-    a.y < b.y + b.h &&
-    a.y + a.h > b.y
-  );
+  return (a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y);
 }
 
 function update() {
@@ -225,13 +206,10 @@ function update() {
 
   const level = levels[currentLevel];
 
-  // Logic platform
   level.platforms.forEach(p => {
     if (p.moving) {
       p.x += p.speed;
-      if (p.x <= p.minX || p.x + p.w >= p.maxX) {
-        p.speed *= -1;
-      }
+      if (p.x <= p.minX || p.x + p.w >= p.maxX) p.speed *= -1;
     }
   });
 
@@ -241,10 +219,7 @@ function update() {
         player.y = p.y - player.h;
         player.vy = 0;
         player.onGround = true;
-
-        if (p.moving) {
-          player.x += p.speed;
-        }
+        if (p.moving) player.x += p.speed;
       }
     }
   });
@@ -253,11 +228,8 @@ function update() {
 
   if (rectCollision(player, level.finish)) {
     currentLevel++;
-
     if (currentLevel >= levels.length) {
       showWinPopup();
-      // 3. PENTING: Stop update loop di sini agar tidak crash saat draw()
-      // dan matikan timer
       clearInterval(timerInterval);
       return; 
     } else {
@@ -267,23 +239,16 @@ function update() {
 
   draw();
   document.getElementById("level").textContent = currentLevel + 1;
-  
-  // Simpan ID animasi supaya bisa di-cancel saat reset
   animationId = requestAnimationFrame(update);
 }
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Cek safety agar tidak error jika level index kelebihan (walaupun sudah dicegah di update)
   if (!levels[currentLevel]) return;
-
   const level = levels[currentLevel];
 
   ctx.fillStyle = "#2ecc71";
-  level.platforms.forEach(p => {
-    ctx.fillRect(p.x, p.y, p.w, p.h);
-  });
+  level.platforms.forEach(p => ctx.fillRect(p.x, p.y, p.w, p.h));
 
   ctx.fillStyle = "red";
   ctx.fillRect(level.lava.x, level.lava.y, level.lava.w, level.lava.h);
@@ -305,30 +270,17 @@ function saveScore(score) {
 
 window.addEventListener("keydown", e => {
   keys[e.key.toLowerCase()] = true;
-  if (e.key === " " && player.onGround) {
-    player.vy = -player.jump;
-  }
+  if (e.key === " " && player.onGround) player.vy = -player.jump;
 });
 
 window.addEventListener("keyup", e => {
   keys[e.key.toLowerCase()] = false;
 });
 
-// Start awal game
 startTimer();
 update();
 
-function loadLeaderboard() {
-  fetch("php/leaderboard_data.php")
-    .then(res => res.text())
-    .then(data => {
-      const el = document.getElementById("leaderboard");
-      if(el) el.innerHTML = data;
-    });
-}
-
-loadLeaderboard();
-setInterval(loadLeaderboard, 5000);
+// FUNGSI LOAD LEADERBOARD DIHAPUS DARI SINI
 
 function showWinPopup() {
   document.getElementById("finalTime").textContent = time;
@@ -338,21 +290,19 @@ function showWinPopup() {
 
 function restartFromPopup() {
   document.getElementById("winPopup").style.display = "none";
-  resetGame(); // Ini sekarang akan memanggil update() lagi dengan benar
+  resetGame();
 }
 
-function goHome() {
-  window.location.href = "home.php"; 
-}
+function goHome() { window.location.href = "home.php"; }
+function goToLeaderboard() { window.location.href = "php/leaderboard.php"; }
 </script>
+
 <div id="winPopup" class="popup">
   <div class="popup-box">
     <h2>🏆 YOU WIN!</h2>
     <p>Waktu terbaik kamu: <span id="finalTime"></span> detik</p>
-
     <button onclick="restartFromPopup()">🔄 Ulangi</button>
-    <button onclick="goHome()">🏠 Ke Home</button>
+    <button onclick="goToLeaderboard()">🏆 Leaderboard</button>
+    <button onclick="goHome()">🏠 Home</button>
   </div>
 </div>
-</body>
-</html>
