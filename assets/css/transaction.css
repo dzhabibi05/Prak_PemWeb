@@ -1,52 +1,95 @@
-body {
-  background: url("../images/Transaction.png") no-repeat center center/cover;
+/* HEADER reuse dari home */
+.top-header {
+  height: 90px;
+  padding: 28px 40px;
+  font-family: "Roblox", sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.3)
+  );
 }
 
-@font-face {
-  font-family: "Roblox";
-  src: url("fonts/roblox.ttf") format("truetype");
+/* MAIN CONTAINER */
+.transaction-container {
+  height: calc(100vh - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* CARD */
 .transaction-card {
-  max-width: 700px;
-  margin: auto;
+  width: 820px;
+  padding: 40px;
+  border-radius: 26px;
+  background: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(16px);
+  position: relative;
   text-align: center;
 }
 
-.action-row {
-  display: flex;
-  justify-content: space-between;
-  margin: 40px 0;
-}
-
-.action-row a {
-  width: 45%;
-  text-decoration: none;
-}
-
-.action-row button {
-  width: 100%;
-  padding: 20px;
-  border-radius: 18px;
-  background: #ccc;
-  border: none;
-  font-size: 18px;
+/* BACK */
+.back-btn {
+  position: absolute;
+  left: 30px;
+  top: 28px;
+  font-size: 28px;
   cursor: pointer;
 }
 
-.action-row button:hover {
-  background: #bbb;
+/* TITLE */
+.card-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 40px;
 }
 
-.note {
-  opacity: 0.7;
+/* ACTION BUTTONS */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
   margin-bottom: 30px;
 }
 
-.submit {
-  padding: 12px 50px;
-  border-radius: 14px;
-  background: #333;
+.action-box {
+  flex: 1;
+  padding: 25px 0;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 22px;
+  font-size: 22px;
+  font-weight: 500;
   color: white;
+}
+
+/* INITIAL ROBUX INPUT */
+.initial-robux {
+  margin-bottom: 28px;
+}
+
+.initial-robux input {
+  width: 580px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(40, 40, 40, 0.9);
   border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* SUBMIT */
+.submit-btn {
+  width: 240px;
+  height: 44px;
+  border-radius: 16px;
+  background: white;
+  color: black;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
 }

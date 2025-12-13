@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Transaction</title>
-    <link rel="stylesheet" href="../assets/css/base.css" />
-    <link rel="stylesheet" href="../assets/css/transaction.css" />
-  </head>
-  <body>
-    <div class="overlay"></div>
-    <div class="header">TRANSACTION</div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transaction</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/transaction.css">
+</head>
+<body>
 
-    <div class="container">
-      <div class="card transaction-card">
-        <div class="back-btn">←</div>
-        <h2>Transaction</h2>
+<div class="overlay"></div>
 
-        <div class="action-row">
-          <a href="expenses.html"><button>Add Expenses</button></a>
-          <a href="income.html"><button>Add Income</button></a>
-        </div>
+<!-- HEADER -->
+<header class="top-header">
+  TRANSACTION
+</header>
 
-        <div class="note">
-          For your first time using Robux Tracker, please input your current
-          Robux
-        </div>
+<!-- CONTENT -->
+<div class="transaction-container">
 
-        <button class="submit">Submit</button>
-      </div>
+  <div class="transaction-card">
+
+    <!-- BACK -->
+    <div class="back-btn">←</div>
+
+    <!-- TITLE -->
+    <h2 class="card-title">Transaction</h2>
+
+    <!-- ACTION BUTTONS -->
+    <div class="action-buttons">
+      <div class="action-box">Add Expenses</div>
+      <div class="action-box">Add Income</div>
     </div>
-  </body>
+
+    <!-- INITIAL ROBUX INPUT -->
+    <div class="initial-robux">
+      <input
+        type="number"
+        placeholder="For your first time Robux Tracker, please input your current Robux"
+      >
+    </div>
+
+    <!-- SUBMIT -->
+    <button class="submit-btn">Submit</button>
+
+  </div>
+
+</div>
+
+</body>
 </html>
