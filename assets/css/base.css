@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Roblox";
+  src: url("../../fonts/roblox.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: url("../images/background.png") center/cover no-repeat;
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.header {
+  position: relative;
+  padding: 24px 40px;
+  font-family: "Roblox", sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+}
+
+.card {
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(1px);
+  border-radius: 22px;
+  padding: 30px;
+}
+
+.back-btn {
+  font-size: 28px;
+  cursor: pointer;
+}

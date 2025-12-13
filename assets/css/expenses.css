@@ -1,0 +1,71 @@
+.form-card {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+body {
+  background: url("../images/Income-Expenses.png") no-repeat center center/cover;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #2e2e2e;
+  color: white;
+  font-size: 14px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select {
+  background: #2e2e2e
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6.5 6.5 6.5-6.5z'/%3E%3C/svg%3E")
+    no-repeat right 14px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+select option {
+  background: #2e2e2e;
+  color: white;
+}
+
+button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px;
+  width: 160px;
+  border-radius: 14px;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover {
+  background: #bbb;
+}
+
+.history-link {
+  display: block;
+  text-align: right;
+  margin-top: 20px;
+  color: #7eb8ff;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.history-link:hover {
+  color: #aad4ff;
+}

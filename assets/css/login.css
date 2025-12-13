@@ -9,11 +9,11 @@
 
 @font-face {
   font-family: "Roblox";
-  src: url("fonts/roblox.ttf") format("truetype");
+  src: url("../../fonts/roblox.ttf") format("truetype");
 }
 
 body {
-  background: url("bg.png") no-repeat center center/cover;
+  background: url("../images/background.png") no-repeat center center/cover;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -69,7 +69,7 @@ body {
   padding: 25px 28px;
   background: rgba(20, 20, 20, 0.55);
   border-radius: 18px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
   color: white;
   text-align: center;
   z-index: 5;
@@ -93,7 +93,7 @@ body {
 .button {
   width: 100%;
   padding: 12px;
-  background: #3c3c3c;
+  background: #232323;
   border: none;
   color: white;
   border-radius: 10px;
@@ -145,36 +145,4 @@ body {
 
 .signup-link:hover {
   opacity: 0.8;
-}
-
-.device-title {
-  position: absolute;
-  bottom: 75px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Roblox", sans-serif;
-  font-size: 28px;
-  color: white;
-  text-align: center;
-  letter-spacing: 1.5px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin: 0;
-  z-index: 10;
-}
-
-
-.device-section {
-  position: absolute;
-  bottom: 18px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-}
-
-.device-section img {
-  height: 45px;
-  max-width: 140px;
-  object-fit: contain;
 }

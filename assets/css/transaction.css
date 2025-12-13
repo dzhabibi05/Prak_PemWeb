@@ -1,0 +1,52 @@
+body {
+  background: url("../images/Transaction.png") no-repeat center center/cover;
+}
+
+@font-face {
+  font-family: "Roblox";
+  src: url("fonts/roblox.ttf") format("truetype");
+}
+
+.transaction-card {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.action-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.action-row a {
+  width: 45%;
+  text-decoration: none;
+}
+
+.action-row button {
+  width: 100%;
+  padding: 20px;
+  border-radius: 18px;
+  background: #ccc;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.action-row button:hover {
+  background: #bbb;
+}
+
+.note {
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.submit {
+  padding: 12px 50px;
+  border-radius: 14px;
+  background: #333;
+  color: white;
+  border: none;
+}

@@ -1,0 +1,114 @@
+/* ================= HEADER ================= */
+body {
+  background: url("../images/catalog.png") no-repeat center center/cover;
+}
+
+.top-header {
+  height: 90px;
+  padding: 28px 40px;
+  font-family: "Roblox", sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  background: black;
+  position: relative;
+  z-index: 5;
+}
+
+/* ================= LAYOUT ================= */
+.home-container {
+  display: flex;
+  height: calc(100vh - 90px);
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 280px;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(1px);
+  padding: 24px 0;
+}
+
+/* PROFILE STRIP */
+.profile-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 26px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 30px;
+}
+
+.profile-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+}
+
+.profile-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-info span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* MENU */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 0 28px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  color: white;
+  opacity: 0.85;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-item img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.menu-item:hover {
+  opacity: 1;
+}
+
+/* ================= CONTENT ================= */
+.home-content {
+  flex: 1;
+  position: relative;
+}
+
+.greeting {
+  font-size: 44px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+/* ================= MASCOT ================= */
+.mascot-area {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+}
+
+.mascot-area img {
+  height: 460px;
+  object-fit: contain;
+}
