@@ -1,0 +1,170 @@
+body {
+  background: url("../images/catalog.png") no-repeat center center/cover;
+}
+
+.top-header {
+  height: 90px;
+  padding: 28px 40px;
+  font-family: "Roblox", sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  background: black;
+  position: relative;
+  z-index: 5;
+}
+
+.home-container {
+  display: flex;
+  height: calc(100vh - 90px);
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar {
+  width: 280px;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(1px);
+  padding: 24px 0;
+}
+
+.profile-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 26px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 30px;
+}
+
+.profile-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+}
+
+.profile-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-info span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 0 28px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  color: white;
+  opacity: 0.85;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-item img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.menu-item:hover {
+  opacity: 1;
+}
+
+.home-content {
+  flex: 1;
+  position: relative;
+}
+
+.greeting {
+  font-size: 44px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.mascot-area {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+}
+
+.mascot-area img {
+  height: 460px;
+  object-fit: contain;
+}
+.logout-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.logout-box {
+  background: #111;
+  padding: 28px 32px;
+  border-radius: 12px;
+  width: 340px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.logout-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.logout-box p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.logout-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.btn-cancel,
+.btn-logout {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-cancel {
+  background: #333;
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background: #444;
+}
+
+.btn-logout {
+  background: #e63946;
+  color: white;
+}
+
+.btn-logout:hover {
+  background: #d62828;
+}

@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Roblox";
+  src: url("../../fonts/roblox.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: url("../images/background.png") center/cover no-repeat;
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.header {
+  position: relative;
+  padding: 24px 40px;
+  font-family: "Roblox", sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    
+    /* Tambahkan margin di sini jika ingin membatasi lebar container */
+    max-width: 600px; 
+    margin: 40px auto; /* Margin 40px atas/bawah, auto kiri/kanan untuk rata tengah */
+}
+
+.card {
+    /* Set kartu sebagai acuan untuk posisi absolut */
+    position: relative; 
+    
+    background: rgba(20, 20, 20, 0.55);
+    backdrop-filter: blur(1px);
+    border-radius: 22px;
+    
+    /* Tambahkan padding yang lebih besar untuk memberi ruang tombol absolut */
+    padding: 50px 30px 30px 30px; 
+    /* Padding atas menjadi 50px agar konten tidak tertutup tombol absolut */
+    
+    /* Hapus margin-top: 30px dari back-btn di sini */
+}
+
+.back-btn {
+    /* Posisi absolut di dalam kartu */
+    position: absolute; 
+    top: 15px; /* Jarak dari tepi atas kartu */
+    left: 20px; /* Jarak dari tepi kiri kartu */
+    
+    /* Gaya Teks */
+    color: white;
+    text-decoration: none;
+    font-size: 24px; /* Ukuran font yang lebih besar */
+    font-weight: 700;
+    opacity: 0.8;
+    transition: opacity 0.2s; 
+}
+
+.back-btn:hover {
+    opacity: 1;
+}
