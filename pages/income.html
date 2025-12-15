@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Add Income</title>
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="../assets/css/income.css">
-</head>
-<body>
+  <head>
+    <title>Add Income</title>
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/income.css" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="header">INCOME</div>
 
-<div class="overlay"></div>
-<div class="header">INCOME</div>
+    <div class="container">
+      <div class="card form-card">
+        <div class="back-btn">←</div>
+        <h2>Add Income</h2>
 
-<div class="container">
-  <div class="card form-card">
-    <div class="back-btn">←</div>
-    <h2>Add Income</h2>
+        <label>Income Source</label>
+        <input />
 
-    <label>Income Source</label>
-    <input>
+        <label>Amount (Robux Received)</label>
+        <input />
 
-    <label>Amount (Robux Received)</label>
-    <input>
+        <label>Date Received</label>
+        <input type="date" />
 
-    <label>Date Received</label>
-    <input type="date">
+        <label>Received From</label>
+        <input />
 
-    <label>Received From</label>
-    <input>
+        <label>Category</label>
+        <input />
 
-    <label>Category</label>
-    <input>
+        <button>Submit</button>
+      </div>
+    </div>
 
-    <button>Submit</button>
-  </div>
-</div>
-
-</body>
+    <!-- JavaScript Animations -->
+    <script src="../assets/js/page-transitions.js"></script>
+    <script src="../assets/js/form-animations.js"></script>
+    <script src="../assets/js/button-animations.js"></script>
+    <script src="../assets/js/input-focus.js"></script>
+    <script src="../assets/js/overlay-animations.js"></script>
+    <script src="../assets/js/card-animations.js"></script>
+    <script src="../assets/js/loading-animations.js"></script>
+  </body>
 </html>

@@ -146,3 +146,143 @@ body {
 .signup-link:hover {
   opacity: 0.8;
 }
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+    padding: 20px 0;
+  }
+
+  .logo {
+    font-size: 26px;
+    top: 15px;
+    padding: 0 15px;
+    text-align: center;
+    width: calc(100% - 120px);
+  }
+
+  .top-button {
+    top: 12px;
+    right: 12px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .form-wrapper {
+    width: calc(100% - 20px);
+    max-width: 100%;
+    padding: 28px 24px;
+    margin: 80px 10px 20px 10px;
+  }
+
+  .form-wrapper h2 {
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+
+  .input-box {
+    padding: 13px 16px;
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .button {
+    padding: 13px;
+    font-size: 15px;
+    margin-top: 5px;
+  }
+
+  .secondary-button {
+    padding: 13px;
+    margin-top: 10px;
+  }
+
+  .small-link {
+    font-size: 13px;
+    margin: 12px 0;
+  }
+
+  .bottom-links {
+    font-size: 13px;
+    margin-top: 16px;
+  }
+}
+
+/* Tablets (577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .logo {
+    font-size: 40px;
+    top: 28px;
+  }
+
+  .top-button {
+    top: 20px;
+    right: 25px;
+    padding: 9px 24px;
+    font-size: 14px;
+  }
+
+  .form-wrapper {
+    width: 450px;
+    padding: 28px;
+  }
+}
+
+/* Medium Tablets (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .logo {
+    font-size: 46px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 375px) {
+  .form-wrapper {
+    padding: 24px 20px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 22px;
+    top: 8px;
+  }
+
+  .form-wrapper {
+    width: calc(100% - 30px);
+    max-width: 600px;
+    padding: 18px 22px;
+    margin: 60px 15px 15px 15px;
+  }
+
+  .form-wrapper h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .input-box {
+    padding: 11px 14px;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  .secondary-button {
+    margin-top: 8px;
+    padding: 10px;
+  }
+}

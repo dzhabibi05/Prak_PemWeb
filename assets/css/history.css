@@ -1,16 +1,148 @@
-.history-card {
-  width: 360px;
-  margin-top: 30px;
+body {
+  background: url("../images/History.png") no-repeat center center / cover;
 }
 
-.negative {
-  color: red;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.history-filter {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.history-filter a {
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.history-filter a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.history-card {
+  width: 360px;
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+}
+
+.history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.badge.income {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.badge.expense {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.muted {
+  color: #bbb;
+  font-size: 13px;
 }
 
 .positive {
-  color: lime;
+  color: #2ecc71;
+  font-weight: bold;
+  margin-top: 8px;
 }
 
-body {
-  background: url("../images/History.png") no-repeat center center/cover;
+.negative {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.back-btn {
+  margin-top: 30px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.back-btn:hover {
+  opacity: 1;
+}
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+  .container {
+    padding: 20px 15px 30px 15px;
+  }
+
+  .history-filter {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .history-filter a {
+    padding: 7px 16px;
+    font-size: 13px;
+  }
+
+  .history-card {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 15px;
+    padding: 16px;
+  }
+
+  .badge {
+    padding: 3px 10px;
+    font-size: 10px;
+  }
+
+  .muted {
+    font-size: 12px;
+  }
+
+  .positive,
+  .negative {
+    font-size: 15px;
+  }
+}
+
+/* Tablets (577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .history-card {
+    width: 420px;
+  }
+}
+
+/* Medium Tablets (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .history-card {
+    width: 480px;
+  }
 }

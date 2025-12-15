@@ -1,51 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Transaction</title>
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="../assets/css/transaction.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Transaction</title>
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/transaction.css" />
+  </head>
+  <body>
+    <div class="overlay"></div>
 
-<div class="overlay"></div>
+    <!-- HEADER -->
+    <header class="top-header">TRANSACTION</header>
 
-<!-- HEADER -->
-<header class="top-header">
-  TRANSACTION
-</header>
+    <!-- CONTENT -->
+    <div class="transaction-container">
+      <div class="transaction-card">
+        <!-- BACK -->
+        <div class="back-btn">←</div>
 
-<!-- CONTENT -->
-<div class="transaction-container">
+        <!-- TITLE -->
+        <h2 class="card-title">Transaction</h2>
 
-  <div class="transaction-card">
+        <!-- ACTION BUTTONS -->
+        <div class="action-buttons">
+          <div class="action-box">Add Expenses</div>
+          <div class="action-box">Add Income</div>
+        </div>
 
-    <!-- BACK -->
-    <div class="back-btn">←</div>
+        <!-- INITIAL ROBUX INPUT -->
+        <div class="initial-robux">
+          <input
+            type="number"
+            placeholder="For your first time Robux Tracker, please input your current Robux"
+          />
+        </div>
 
-    <!-- TITLE -->
-    <h2 class="card-title">Transaction</h2>
-
-    <!-- ACTION BUTTONS -->
-    <div class="action-buttons">
-      <div class="action-box">Add Expenses</div>
-      <div class="action-box">Add Income</div>
+        <!-- SUBMIT -->
+        <button class="submit-btn">Submit</button>
+      </div>
     </div>
 
-    <!-- INITIAL ROBUX INPUT -->
-    <div class="initial-robux">
-      <input
-        type="number"
-        placeholder="For your first time Robux Tracker, please input your current Robux"
-      >
-    </div>
+    <!-- JavaScript Animations -->
+    <script src="../assets/js/page-transitions.js"></script>
+    <script src="../assets/js/button-animations.js"></script>
+    <script src="../assets/js/input-focus.js"></script>
+    <script src="../assets/js/overlay-animations.js"></script>
+    <script src="../assets/js/card-animations.js"></script>
+    <script src="../assets/js/loading-animations.js"></script>
 
-    <!-- SUBMIT -->
-    <button class="submit-btn">Submit</button>
+    <!-- Transaction Functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const actionBoxes = document.querySelectorAll(".action-box");
 
-  </div>
+        actionBoxes.forEach((box) => {
+          box.addEventListener("click", function () {
+            const buttonText = this.textContent.trim();
 
-</div>
-
-</body>
+            if (buttonText === "Add Expenses") {
+              window.location.href = "expenses.html";
+            } else if (buttonText === "Add Income") {
+              window.location.href = "income.html";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

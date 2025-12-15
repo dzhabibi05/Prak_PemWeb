@@ -1,4 +1,3 @@
-/* HEADER reuse dari home */
 .top-header {
   height: 90px;
   padding: 28px 40px;
@@ -7,12 +6,11 @@
   letter-spacing: 2px;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.9),
-    rgba(0,0,0,0.3)
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.3)
   );
 }
 
-/* MAIN CONTAINER */
 .transaction-container {
   height: calc(100vh - 90px);
   display: flex;
@@ -20,7 +18,6 @@
   align-items: center;
 }
 
-/* CARD */
 .transaction-card {
   width: 820px;
   padding: 40px;
@@ -31,7 +28,6 @@
   text-align: center;
 }
 
-/* BACK */
 .back-btn {
   position: absolute;
   left: 30px;
@@ -40,14 +36,12 @@
   cursor: pointer;
 }
 
-/* TITLE */
 .card-title {
   font-size: 28px;
   font-weight: 500;
   margin-bottom: 40px;
 }
 
-/* ACTION BUTTONS */
 .action-buttons {
   display: flex;
   justify-content: space-between;
@@ -65,7 +59,6 @@
   color: white;
 }
 
-/* INITIAL ROBUX INPUT */
 .initial-robux {
   margin-bottom: 28px;
 }
@@ -82,7 +75,6 @@
   text-align: center;
 }
 
-/* SUBMIT */
 .submit-btn {
   width: 240px;
   height: 44px;
@@ -92,4 +84,129 @@
   border: none;
   font-size: 15px;
   cursor: pointer;
+}
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+  .top-header {
+    height: 70px;
+    padding: 20px 15px;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .transaction-container {
+    height: auto;
+    min-height: calc(100vh - 70px);
+    padding: 20px 15px;
+  }
+
+  .transaction-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 50px 20px 25px 20px;
+    border-radius: 20px;
+  }
+
+  .back-btn {
+    left: 15px;
+    top: 20px;
+    font-size: 24px;
+  }
+
+  .card-title {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .action-box {
+    padding: 20px 15px;
+    font-size: 18px;
+    border-radius: 18px;
+  }
+
+  .initial-robux input {
+    width: 100%;
+    max-width: 100%;
+    height: 48px;
+    font-size: 15px;
+    padding: 0 15px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    max-width: 200px;
+    height: 42px;
+    font-size: 14px;
+  }
+}
+
+/* Tablets (577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .top-header {
+    height: 80px;
+    padding: 24px 25px;
+    font-size: 30px;
+  }
+
+  .transaction-container {
+    padding: 30px 20px;
+  }
+
+  .transaction-card {
+    width: 90%;
+    max-width: 680px;
+    padding: 35px 30px;
+  }
+
+  .card-title {
+    font-size: 26px;
+  }
+
+  .action-buttons {
+    gap: 25px;
+  }
+
+  .action-box {
+    font-size: 20px;
+  }
+
+  .initial-robux input {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+/* Medium Tablets (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .transaction-card {
+    width: 750px;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .transaction-container {
+    height: auto;
+    padding: 15px;
+  }
+
+  .transaction-card {
+    padding: 45px 20px 20px 20px;
+  }
+
+  .card-title {
+    margin-bottom: 20px;
+  }
+
+  .action-buttons {
+    margin-bottom: 20px;
+  }
 }

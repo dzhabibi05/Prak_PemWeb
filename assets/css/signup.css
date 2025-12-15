@@ -189,3 +189,181 @@ body {
 .terms-text a:hover {
   color: #ffffff;
 }
+.error-note {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff3b3b;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+    padding: 20px 0;
+  }
+
+  .logo {
+    font-size: 26px;
+    top: 15px;
+    padding: 0 15px;
+    width: calc(100% - 120px);
+  }
+
+  .top-button {
+    top: 12px;
+    right: 12px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .form-wrapper {
+    width: calc(100% - 20px);
+    max-width: 100%;
+    padding: 28px 24px;
+    margin: 80px 10px 20px 10px;
+  }
+
+  .form-wrapper h2 {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+
+  .field-label {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .input-box {
+    padding: 12px 16px;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .select-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .select-row .input-box {
+    margin-bottom: 0;
+  }
+
+  .gender-row {
+    margin-bottom: 12px;
+  }
+
+  .gender-button {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .gender-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .button {
+    padding: 13px;
+    font-size: 15px;
+    margin-top: 8px;
+  }
+
+  .terms-text {
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+  .terms-text {
+    font-size: 10px;
+    line-height: 13px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 375px) {
+  .form-wrapper {
+    padding: 24px 20px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+}
+
+/* Tablets (577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .logo {
+    font-size: 40px;
+    top: 28px;
+  }
+
+  .top-button {
+    top: 20px;
+    right: 25px;
+    padding: 9px 24px;
+    font-size: 14px;
+  }
+
+  .form-wrapper {
+    width: 450px;
+    padding: 25px;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 22px;
+    top: 8px;
+  }
+
+  .form-wrapper {
+    width: calc(100% - 30px);
+    max-width: 600px;
+    padding: 18px 22px;
+    margin: 60px 15px 15px 15px;
+  }
+
+  .form-wrapper h2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .input-box {
+    padding: 10px 14px;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    padding: 11px;
+  }
+}
+    font-size: 24px;
+    top: 10px;
+  }
+
+  .form-wrapper {
+    width: calc(100% - 40px);
+    max-width: 600px;
+    padding: 15px 20px;
+  }
+
+  .form-wrapper h2 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .button {
+    padding: 10px;
+  }
+}

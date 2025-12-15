@@ -1,4 +1,3 @@
-/* ================= HEADER ================= */
 body {
   background: url("../images/catalog.png") no-repeat center center/cover;
 }
@@ -14,7 +13,6 @@ body {
   z-index: 5;
 }
 
-/* ================= LAYOUT ================= */
 .home-container {
   display: flex;
   height: calc(100vh - 90px);
@@ -22,7 +20,6 @@ body {
   z-index: 2;
 }
 
-/* ================= SIDEBAR ================= */
 .sidebar {
   width: 280px;
   height: 100%;
@@ -31,7 +28,6 @@ body {
   padding: 24px 0;
 }
 
-/* PROFILE STRIP */
 .profile-strip {
   display: flex;
   align-items: center;
@@ -58,7 +54,6 @@ body {
   opacity: 0.7;
 }
 
-/* MENU */
 .menu-list {
   display: flex;
   flex-direction: column;
@@ -87,7 +82,6 @@ body {
   opacity: 1;
 }
 
-/* ================= CONTENT ================= */
 .home-content {
   flex: 1;
   position: relative;
@@ -100,7 +94,6 @@ body {
   margin-left: 50px;
 }
 
-/* ================= MASCOT ================= */
 .mascot-area {
   position: absolute;
   left: 50%;
@@ -111,4 +104,277 @@ body {
 .mascot-area img {
   height: 460px;
   object-fit: contain;
+}
+.logout-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  display: none;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 99999 !important;
+}
+
+.logout-box {
+  position: relative !important;
+  background: #1a1a1a !important;
+  padding: 32px 36px !important;
+  border-radius: 12px !important;
+  width: 360px !important;
+  max-width: 90% !important;
+  text-align: center !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  z-index: 100000 !important;
+}
+
+.logout-box h3 {
+  font-size: 22px !important;
+  margin-bottom: 12px !important;
+  color: white !important;
+}
+
+.logout-box p {
+  font-size: 15px !important;
+  opacity: 0.8 !important;
+  margin-bottom: 28px !important;
+  color: white !important;
+}
+
+.logout-actions {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 16px !important;
+}
+
+.btn-cancel,
+.btn-logout {
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  font-size: 15px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  border: none !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-cancel {
+  background: #333 !important;
+  color: #fff !important;
+}
+
+.btn-cancel:hover {
+  background: #444 !important;
+}
+
+.btn-logout {
+  background: #e63946 !important;
+  color: white !important;
+}
+
+.btn-logout:hover {
+  background: #d62828 !important;
+}
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+  .top-header {
+    height: 70px;
+    padding: 20px 15px;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .home-container {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 70px);
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .profile-strip {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+  }
+
+  .profile-avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .profile-info h3 {
+    font-size: 16px;
+  }
+
+  .profile-info span {
+    font-size: 12px;
+  }
+
+  .menu-list {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    text-align: center;
+    min-width: 80px;
+    gap: 8px;
+  }
+
+  .menu-item span {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .menu-item img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-content {
+    padding: 20px 15px;
+  }
+
+  .greeting {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-left: 15px;
+    text-align: center;
+  }
+
+  .mascot-area {
+    position: relative;
+    left: 0;
+    transform: none;
+    top: 20px;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .mascot-area img {
+    height: 280px;
+    max-width: 100%;
+  }
+
+  .logout-box {
+    width: 320px !important;
+    padding: 24px 28px !important;
+  }
+
+  .logout-box h3 {
+    font-size: 20px !important;
+  }
+
+  .logout-box p {
+    font-size: 14px !important;
+  }
+
+  .logout-actions {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .btn-cancel,
+  .btn-logout {
+    width: 100% !important;
+  }
+}
+
+/* Tablets (577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .top-header {
+    height: 80px;
+    padding: 24px 25px;
+    font-size: 30px;
+  }
+
+  .sidebar {
+    width: 240px;
+  }
+
+  .profile-strip {
+    padding: 15px 20px;
+    gap: 12px;
+  }
+
+  .profile-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .menu-list {
+    padding: 0 20px;
+    gap: 22px;
+  }
+
+  .menu-item {
+    font-size: 14px;
+  }
+
+  .greeting {
+    font-size: 36px;
+    margin-left: 30px;
+  }
+
+  .mascot-area img {
+    height: 380px;
+  }
+}
+
+/* Medium Tablets to Small Laptops (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .sidebar {
+    width: 260px;
+  }
+
+  .greeting {
+    font-size: 40px;
+  }
+
+  .mascot-area img {
+    height: 420px;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .home-container {
+    height: auto;
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .profile-strip {
+    padding: 12px 15px;
+  }
+
+  .greeting {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+
+  .mascot-area {
+    top: 40px;
+  }
+
+  .mascot-area img {
+    height: 280px;
+  }
 }

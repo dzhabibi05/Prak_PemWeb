@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Roblox Trackers - Welcome</title>
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <style>
+      .welcome-wrapper {
+        position: relative;
+        width: 420px;
+        padding: 35px 28px;
+        background: rgba(20, 20, 20, 0.55);
+        border-radius: 18px;
+        backdrop-filter: blur(1px);
+        color: white;
+        text-align: center;
+        z-index: 5;
+      }
+      .welcome-wrapper h2 {
+        font-size: 18px;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      .welcome-wrapper p {
+        font-size: 14px;
+        color: #b8b8b8;
+        margin-bottom: 24px;
+      }
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      /* ========== RESPONSIVE DESIGN ========== */
+
+      /* Mobile Devices (up to 576px) */
+      @media (max-width: 576px) {
+        body {
+          padding: 20px 0;
+        }
+
+        .logo {
+          font-size: 26px;
+          top: 15px;
+          padding: 0 15px;
+          width: calc(100% - 20px);
+        }
+
+        .welcome-wrapper {
+          width: calc(100% - 20px);
+          max-width: 100%;
+          padding: 30px 24px;
+          margin: 80px 10px 20px 10px;
+        }
+
+        .welcome-wrapper h2 {
+          font-size: 17px;
+          margin-bottom: 16px;
+        }
+
+        .welcome-wrapper p {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+
+        .button {
+          padding: 13px;
+          font-size: 15px;
+        }
+      }
+
+      /* Tablets (577px to 768px) */
+      @media (min-width: 577px) and (max-width: 768px) {
+        .logo {
+          font-size: 40px;
+        }
+
+        .welcome-wrapper {
+          width: 450px;
+          padding: 32px 26px;
+        }
+      }
+
+      /* Landscape orientation for mobile */
+      @media (max-height: 500px) and (orientation: landscape) {
+        .logo {
+          font-size: 24px;
+          top: 10px;
+        }
+
+        .welcome-wrapper {
+          width: calc(100% - 40px);
+          max-width: 500px;
+          padding: 20px;
+        }
+
+        .welcome-wrapper h2 {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+
+        .welcome-wrapper p {
+          margin-bottom: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    <h1 class="logo">ROBLOX TRACKERS</h1>
+
+    <div class="welcome-wrapper">
+      <h2>Welcome to Roblox Trackers!</h2>
+      <p>Silakan login atau daftar untuk mulai tracking Robux Anda.</p>
+
+      <div class="links">
+        <a href="login.php" class="button">Log In</a>
+        <a href="register.php" class="button secondary-button">Sign Up</a>
+      </div>
+    </div>
+  </body>
+</html>
