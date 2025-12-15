@@ -58,11 +58,6 @@ if (isset($_SESSION['user_id'])) {
         <button type="submit" class="button">Log In</button>
       </form>
 
-      <a class="small-link" href="#">Forgot Password or Username?</a>
-
-      <button class="button secondary-button">Send Me a One Time Code</button>
-      <button class="button secondary-button">Use Another Device</button>
-
       <div class="bottom-links">
         Don't have an account?
         <a class="signup-link" href="register.php">Sign up</a>

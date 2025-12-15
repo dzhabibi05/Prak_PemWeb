@@ -15,6 +15,7 @@ $username = $_SESSION['username'];
     <title>Robux Tracker - Home</title>
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/home.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <div class="overlay"></div>
@@ -67,7 +68,7 @@ $username = $_SESSION['username'];
       <main class="home-content">
         <h1 class="greeting">Hi, <?= htmlspecialchars($username) ?>!</h1>
 
-        <div class="mascot-area">
+        <div class="mascot-area" data-aos="zoom-in" data-aos-duration="1000">
           <img src="assets/mascot/Maskot.png" alt="Mascot" />
         </div>
       </main>
@@ -113,6 +114,10 @@ $username = $_SESSION['username'];
       confirmBtn.addEventListener("click", function() {
         window.location.href = "php/logout.php";
       });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
     <script src="assets/js/animations.js"></script>
   </body>

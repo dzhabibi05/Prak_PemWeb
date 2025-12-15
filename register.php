@@ -88,56 +88,6 @@ if (isset($_SESSION['user_id'])) {
           required
         />
 
-        <label class="field-label">Gender (optional)</label>
-        <div class="gender-row">
-          <button type="button" class="gender-button male" onclick="selectGender('male', this)">
-            <svg
-              class="gender-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="10"
-                cy="14"
-                r="5"
-                stroke="currentColor"
-                stroke-width="2"
-              />
-              <path
-                d="M14 10L20 4M20 4H16M20 4V8"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-          <button type="button" class="gender-button female" onclick="selectGender('female', this)">
-            <svg
-              class="gender-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="12"
-                cy="9"
-                r="5"
-                stroke="currentColor"
-                stroke-width="2"
-              />
-              <path
-                d="M12 14V22M9 19H15"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-          <input type="hidden" name="gender" id="genderInput" value="">
-        </div>
-
         <small class="terms-text">
           By clicking Sign Up, you are agreeing to the
           <a href="#">Terms of Use</a> including the arbitration clause and you
@@ -148,13 +98,6 @@ if (isset($_SESSION['user_id'])) {
       </form>
     </div>
 
-    <script>
-      function selectGender(gender, btn) {
-        document.getElementById('genderInput').value = gender;
-        document.querySelectorAll('.gender-button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      }
-    </script>
     <script src="assets/js/animations.js"></script>
   </body>
 </html>
