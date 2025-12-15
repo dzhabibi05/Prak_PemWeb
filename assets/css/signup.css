@@ -348,22 +348,3 @@ body {
     padding: 11px;
   }
 }
-    font-size: 24px;
-    top: 10px;
-  }
-
-  .form-wrapper {
-    width: calc(100% - 40px);
-    max-width: 600px;
-    padding: 15px 20px;
-  }
-
-  .form-wrapper h2 {
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
-
-  .button {
-    padding: 10px;
-  }
-}
